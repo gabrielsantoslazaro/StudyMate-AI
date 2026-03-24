@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="theme-color" content="#0a0b0f" />
+  <link rel="shortcut icon" href="studymate-favicon.png" type="image/png">
+  <title>StudyMate AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div class="app">
+
+    <div class="header">
+      <div class="logo-box"><img src="/logo.png" alt="StudyMate AI Logo" class="logo-img"/></div>
+      <div class="header-text">
+        <h1>StudyMate AI</h1>
+        <p>Paste your notes to summarize, create a quiz, or extract key terms.</p>
+      </div>
+    </div>
+
+    <div class="mode-buttons">
+      <button class="mode-btn active" data-mode="summary">
+        <span class="mode-icon">✦</span> Summarize
+      </button>
+      <button class="mode-btn" data-mode="quiz">
+        <span class="mode-icon">⚡</span> Make Quiz
+      </button>
+      <button class="mode-btn" data-mode="keyterms">
+        <span class="mode-icon">🏷</span> Key Terms
+      </button>
+    </div>
+
+    <div class="card">
+      <label class="card-label">Paste Your Notes</label>
+      <textarea id="notes" placeholder="paste or type your notes here..."></textarea>
+
+      <div class="top-actions">
+        <p id="wordCount">0 words</p>
+        <div class="action-buttons">
+          <button id="clearBtn" class="secondary-btn">Clear</button>
+          <button id="generateBtn" class="primary-btn">
+            <span class="btn-icon">✦</span>
+            <span id="generateBtnLabel">Generate Summary</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="samples">
+        <span>Try:</span>
+        <button class="sample-btn" data-sample="sample">Sample notes</button>
+        <button class="sample-btn" data-sample="biology">Biology text</button>
+        <button class="sample-btn" data-sample="history">History passage</button>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="stat-card stat-green">
+        <h2 id="wordsStat">0</h2>
+        <p>Words pasted</p>
+      </div>
+      <div class="stat-card stat-purple">
+        <h2 id="sentencesStat">0</h2>
+        <p>Sentences</p>
+      </div>
+      <div class="stat-card stat-pink">
+        <h2 id="readTimeStat">—</h2>
+        <p>Read time</p>
+      </div>
+    </div>
+
+    <div class="result-card">
+      <div class="result-header">
+        <span class="result-badge" id="resultBadge">Result</span>
+        <button class="icon-btn" id="copyBtn" title="Copy">⎘</button>
+      </div>
+      <div id="result" class="result-empty">
+        <span class="empty-icon">◈</span>
+        <span>Your output will appear here...</span>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer">
+    <p>Made with <span class="heart">♥</span> by <a href="https://gabriellazaro.site/" target="_blank" rel="noopener noreferrer" class="footer-link">Gab</a></p>
+  </footer>
+
+  <script src="/script.js"></script>
+</body>
+</html>
