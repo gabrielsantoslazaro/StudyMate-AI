@@ -133,7 +133,7 @@ generateBtn.addEventListener("click", async () => {
   showLoading();
 
   try {
-    const response = await fetch("/api/study", {
+    const response = await fetch(`${BACKEND_URL}/api/study`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ notes, mode: currentMode })
