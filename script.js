@@ -1,3 +1,5 @@
+const BACKEND_URL = "https://studymate-ai-backend-sj6z.onrender.com";
+
 const notesInput     = document.getElementById("notes");
 const wordCount      = document.getElementById("wordCount");
 const wordsStat      = document.getElementById("wordsStat");
